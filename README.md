@@ -1,4 +1,5 @@
-# *Машина за палачинки*
+# *Krepinator*
+## *Машина за палачинки*
 
 (https://github.com/irina-mandarina/Crepe-machine/blob/main/logo.png)
 
