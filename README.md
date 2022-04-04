@@ -1,7 +1,7 @@
 # *Krepinator*
 ## *Машина за палачинки*
 
-(https://github.com/irina-mandarina/Crepe-machine/blob/main/logo - Copy.png)
+(https://github.com/irina-mandarina/Crepe-machine/blob/main/KrepinatorLogo.png)
 
   Ароматът на топли палачинки е най-приемливият заместник на будилник за уикендите,
 но процедурата по готвене е прецизна и времеемка. Затова аз реших да направя това
