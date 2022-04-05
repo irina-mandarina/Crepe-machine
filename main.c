@@ -1,13 +1,13 @@
 // stepper 1 - left
-const int dir1 = 1;
-const int step1 = 2;
+const int dir1 = 2;
+const int step1 = 3;
 
 // stepper 2 - right
-const int dir2 = 3;
-const int step2 = 4;
+const int dir2 = 5;
+const int step2 = 6;
 
 //button
-const int button = 5;
+const int button = 7;
 int buttonPresses = 0;
 
 const int turnover = 400; // 360 deg / 0.9 deg per step = 400 steps
@@ -73,6 +73,8 @@ void flip(const int stepperIndex) {
   Serial.println(stepperIndex);
 
   makeSteps(stepperIndex, turnover / 2, 1);
+  delay(500);
+  makeSteps(stepperIndex, turnover / 2, 0);
 
   Serial.print("Flipped stepper ");
   Serial.println(stepperIndex);
