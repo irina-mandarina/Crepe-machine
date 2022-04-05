@@ -8,7 +8,6 @@ const int step2 = 6;
 
 //button
 const int button = 7;
-int buttonPresses = 0;
 
 const int turnover = 400; // 360 deg / 0.9 deg per step = 400 steps
 const int rotateSpeed = 500; // 500 microseconds
@@ -29,8 +28,6 @@ void setup() {
   while (1) {
     if (digitalRead(button) == HIGH) {
       Serial.println("Button state = " + digitalRead(button));
-      buttonPresses ++;
-      Serial.println("Button presses = " + buttonPresses);
       Serial.println("Entering the mainloop");
       break;
     }
@@ -81,8 +78,22 @@ void flip(const int stepperIndex) {
 }
 
 void loop() {
+  // the batter is poured. wait
+  delay(1000);
+  // the first side is done cooking. flip
   flip(1);
+  // wait for the second side
   delay(1000);
+  // flip onto the plate.
   flip(2);
-  delay(1000);
+  // wait for the user to press the button (that means that he has poured the batter)
+  while (1) {
+    if (digitalRead(button) == HIGH) {
+      Serial.println("Button state = " + digitalRead(button));
+      break;
+    }
+    else {
+      Serial.println("Waiting for button press = batter on pan 1");
+    }
+  }
 }
