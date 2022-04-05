@@ -32,10 +32,10 @@ void setup() {
       buttonPresses ++;
       Serial.println("Button presses = " + buttonPresses);
       Serial.println("Entering the mainloop");
+      break;
     }
     else {
       Serial.println("Waiting for button press = batter on pan 1");
-      break;
     }
   }
 }
