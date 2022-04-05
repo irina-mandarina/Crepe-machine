@@ -8,29 +8,33 @@ const int step2 = 4;
 
 //button
 const int button = 5;
+int buttonPresses = 0;
 
 const int turnover = 400; // 360 deg / 0.9 deg per step = 400 steps
 const int rotateSpeed = 500; // 500 microseconds
-const int flipDelay = 2*60*1000; // second motor will activate 2 minutes after the first one
+const int flipDelay = 2 * 60 * 1000; // second motor will activate 2 minutes after the first one
 
 void setup() {
   Serial.begin(9600);
-  
+
   pinMode(dir1, OUTPUT); // dir stepper 1
   pinMode(step1, OUTPUT); // step stepper 1
-  
+
   pinMode(dir2, OUTPUT); // dir stepper 2
   pinMode(step2, OUTPUT); // step stepper 2
-  
+
   pinMode(button, INPUT);
-  
-  while(1) {
-    if (button == LOW) {
-      Serial.println("Waiting for button press = batter on pan 1");
+
+  // wait for button press. The button should be pressed when the first serving of batter is poured on the first pan
+  while (1) {
+    if (digitalRead(button) == HIGH) {
+      Serial.println("Button state = " + digitalRead(button));
+      buttonPresses ++;
+      Serial.println("Button presses = " + buttonPresses);
+      Serial.println("Entering the mainloop");
     }
     else {
-      Serial.println("Button state = " + button);
-      Serial.println("Entering the mainloop");
+      Serial.println("Waiting for button press = batter on pan 1");
       break;
     }
   }
@@ -46,7 +50,7 @@ void makeSteps(const int stepperIndex, const int steps, const int left) {
     dir = dir2;
     step = step2;
   }
-  
+
   // set direction
   if (left == 1) {
     digitalWrite(dir, HIGH);
@@ -54,9 +58,9 @@ void makeSteps(const int stepperIndex, const int steps, const int left) {
   else {
     digitalWrite(dir, LOW);
   }
-  
+
   // make steps
-  for(int i = 0; i < steps; i++){
+  for (int i = 0; i < steps; i++) {
     digitalWrite(step, HIGH);
     delayMicroseconds(rotateSpeed); // rotate
     digitalWrite(step, LOW);
@@ -67,9 +71,9 @@ void makeSteps(const int stepperIndex, const int steps, const int left) {
 void flip(const int stepperIndex) {
   Serial.print("Flipping stepper ");
   Serial.println(stepperIndex);
-  
-  makeSteps(stepperIndex, turnover/2, 1);
-  
+
+  makeSteps(stepperIndex, turnover / 2, 1);
+
   Serial.print("Flipped stepper ");
   Serial.println(stepperIndex);
 }
@@ -77,6 +81,6 @@ void flip(const int stepperIndex) {
 void loop() {
   flip(1);
   delay(1000);
-  makeSteps(1, 200, 1);
   flip(2);
+  delay(1000);
 }
