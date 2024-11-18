@@ -1,41 +1,26 @@
 # *Krepinator*
-## *Машина за палачинки*
+## *Crepe machine*
 
 (https://github.com/irina-mandarina/Crepe-machine/blob/main/KrepinatorLogo.png)
 
-  Ароматът на топли палачинки е най-приемливият заместник на будилник за уикендите,
-но процедурата по готвене е прецизна и времеемка. Затова аз реших да направя това
-удоволствие по-често явление – автоматична машина за палачинки. Освен да улеснява вкусните сутрини,
-тя би била идеален аксесоар към кухненския интериор чрез контролираните си, постепенни движения.
-Механизмът би създавал интересен вид на островен плот, центрирайки вниманието върху себе си.
+  The aroma of warm pancakes is the most acceptable substitute for an alarm clock for weekends,
+but the cooking procedure is precise and time-consuming. So I decided to do this
+pleasure more common occurrence - an automatic pancake machine. Besides facilitating delicious mornings,
+it would be an ideal accessory to the kitchen interior with its controlled, gradual movements.
+The mechanism would create an interesting look on an island counter, centering attention on itself.
 
-## Презентация или документация или нещо друо
-[Линк към ресурса]](link)
+### Instructions for starting the project
 
-## Как да си сваля и използвам проекта?
+1) Turn on the gas burners to heat up (1 minute is enough)
+2) Put a plate to the right of the right pan (for the finished pancakes)
+3) After you have uploaded the code to the microcontroller, plug in the power supply (220 V)
+4) Pour the pancake mixture over the left pan
+Example: 1 egg, 2 tsp. sifted flour can be a mixture of white and whole grain, 1 tsp. l soda bicarbonate, 400 g of yogurt, or 2 tsp of fresh
 
-### Инструкции за сваляне
+The machine will continue its work by turning the pancake and dropping it into the plate
 
-1) Изтеглете кода от този файл: 
-2) Изтеглете компилатор за Arduino - 
-3) Отворете файла () и качете кода на микроконтролера чрез USB кабел
+## Used technologies
 
-### Инструкции за стартиране на проекта
-
-1) Включете газовите котлони, за да загреят (1 минута е достатъчна)
-2) Сложете чиния вдясно от десния тиган (за готовите палачинки)
-3) След като сте качили кода на микроконтролера, включете захранването в контакт (220 V)
-4) Излейте смес за палачинки върху левия тиган 
-Пример: 1 яйце, 2 ч. ч. пресято брашно, може смес от бяло и пълнозърнесто, 1 к. л. сода бикарбонат, 400 г кисело мляко или 2 ч. ч. прясно
-
-Машината ще продължи работата си като обърне палачинката и я пусне в чинията
-
-## Използвани технологии
-
-* [Arduino](https://www.arduino.cc/) - *Open-source Arduino IDE. Този софтуер е използван с Arduino MEGA 2560.*
-
-## Информация за авторите на проекта
-
-* **Ирина Ахамад** - *(програмист, дизаинер, хардуерист)* - Ирина (https://github.com/irina-mandarina)
+* [Arduino](https://www.arduino.cc/) - *Open-source Arduino IDE. Arduino MEGA 2560.*
 
 :)
